@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AndroidExample</string>
+    <string name="app_name">Mythology Balatro</string>
+    <string name="play_btn_text">Play</string>
 </resources>
