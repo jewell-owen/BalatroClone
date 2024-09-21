@@ -5,7 +5,7 @@
     tools:context=".MainActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@drawable/balatro_background">
+    android:background="@drawable/balatro2_background">
 
     <TextView
         android:id="@+id/main_title_tv"
@@ -16,7 +16,7 @@
         android:shadowColor="#000000"
         android:shadowRadius="30"
         android:textColor="@color/white"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/balatro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@id/main_quit_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_title_tv">
+        app:layout_constraintTop_toBottomOf="@id/main_app_name_tv">
     </Button>
 
     <Button
@@ -66,7 +66,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/main_play_btn"
-        app:layout_constraintTop_toBottomOf="@id/main_title_tv">
+        app:layout_constraintTop_toBottomOf="@id/main_app_name_tv">
     </Button>
 
     <Button
