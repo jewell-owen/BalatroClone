@@ -17,21 +17,22 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/balatro"
-        android:text="Blind"
+        android:text="Blind Name"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:cornerRadius="10dp">
     </Button>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/yellowDark">
 
         <ImageView
             android:id="@+id/sidebar_blind_iv"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
             android:src="@drawable/blind_icon" />
@@ -53,7 +54,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/yellowDark">
 
         <ImageView
             android:id="@+id/sidebar_offense_type_required_iv"
@@ -72,6 +74,25 @@
             android:id="@+id/sidebar_current_offense_score_tv"
             android:layout_width="50dp"
             android:layout_height="50dp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/sidebarDarkBackground"
+        app:cornerRadius="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Selected Hand Type"
+            android:textColor="@color/white"
+            android:fontFamily="@font/balatro"
+            android:textSize="14sp"
+            android:textAlignment="center">
         </TextView>
 
 
