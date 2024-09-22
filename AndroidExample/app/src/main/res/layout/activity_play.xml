@@ -1,10 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".PlayActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/balatroplay_background">
+
+    <LinearLayout
+        android:id="@+id/play_hand_linearlayout"
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
+        app:layout_constraintEnd_toStartOf="@id/play_deck_linearlayout">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/play_jokers_linearlayout"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
+        app:layout_constraintEnd_toStartOf="@id/play_consumables_linearlayout">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/play_consumables_linearlayout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/play_shop_fragment_container_view"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:name="com.example.androidexample.SidebarFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/play_deck_linearlayout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </LinearLayout>
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
