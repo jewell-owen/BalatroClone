@@ -7,32 +7,38 @@
     android:layout_height="420dp"
     android:background="@color/sidebarBackground"
     android:orientation="vertical"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/sidebar_blind_btn"
+    <TextView
+        android:id="@+id/sidebar_blind_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/yellow"
+        android:background="@drawable/yellow_rounded_background"
         android:fontFamily="@font/balatro"
         android:text="Blind Name"
-        android:textAlignment="center"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="10dp">
-    </Button>
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/yellowDark">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/yellow_dark_top_rounded_background">
 
         <ImageView
             android:id="@+id/sidebar_blind_iv"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
             android:src="@drawable/blind_icon" />
@@ -40,11 +46,20 @@
         <TextView
             android:id="@+id/sidebar_defense_score_required_tv"
             android:layout_width="50dp"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:fontFamily="@font/balatro"
+            android:layout_marginTop="-7dp"
+            android:gravity="center"
+            android:text="D Score Req"
+            android:textColor="@color/white">
         </TextView>
 
         <TextView
-            android:id="@+id/sidebar_offense_score_required_tv"
+            android:id="@+id/sidebar_current_defense_score_tv"
+            android:text="D Score"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/balatro"
             android:layout_width="50dp"
             android:layout_height="50dp">
         </TextView>
@@ -55,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/yellowDark">
+        android:background="@drawable/yellow_dark_bottom_rounded_background">
 
         <ImageView
             android:id="@+id/sidebar_offense_type_required_iv"
@@ -65,13 +80,22 @@
             android:src="@drawable/blind_offense_required_icon" />
 
         <TextView
-            android:id="@+id/sidebar_current_defense_score_tv"
+            android:id="@+id/sidebar_offense_score_required_tv"
             android:layout_width="50dp"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:fontFamily="@font/balatro"
+            android:gravity="center"
+            android:layout_marginTop="-7dp"
+            android:text="O Score Req"
+            android:textColor="@color/white">
         </TextView>
 
         <TextView
             android:id="@+id/sidebar_current_offense_score_tv"
+            android:text="O Score"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/balatro"
             android:layout_width="50dp"
             android:layout_height="50dp">
         </TextView>
@@ -81,19 +105,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/sidebarDarkBackground"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/dark_rounded_background"
         app:cornerRadius="30dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Selected Hand Type"
+            android:text="Hand Type"
+            android:gravity="center"
             android:textColor="@color/white"
             android:fontFamily="@font/balatro"
             android:textSize="14sp"
             android:textAlignment="center">
         </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:cornerRadius="30dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="#1"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/balatro"
+                android:background="@drawable/blue_rounded_background"
+                android:textSize="14sp">
+            </TextView>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="#2"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/balatro"
+                android:background="@drawable/red_rounded_background"
+                android:textSize="14sp">
+            </TextView>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
