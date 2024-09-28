@@ -38,7 +38,7 @@ public class Card {
     }
 
     //returns an int for the card value
-    private int getNumberValue(){
+    protected int getNumberValue(){
         switch(this.value){
             case NONE:
                 return 0;
@@ -72,28 +72,28 @@ public class Card {
         return -1;
     }
 
-    private Value getEnumValue(){
+    protected Value getEnumValue(){
         return this.value;
     }
 
-    private Suit getSuit(){
+    protected Suit getSuit(){
         return this.suit;
     }
 
-    private Mod getMod(){
+    protected Mod getMod(){
         return this.mod;
     }
 
-    private Item getItem(){return this.item;}
+    protected Item getItem(){return this.item;}
 
-    private void setNumberValue(int i){
+    protected void setNumberValue(int i){
         this.value = Value.values()[i];
         if (this.defense < i){
             this.defense = i;
         }
     }
 
-    private void setEnumValue(Value v){
+    protected void setEnumValue(Value v){
         this.value = v;
         if (this.defense < this.getNumberValue()){
             this.defense = this.getNumberValue();
@@ -103,7 +103,7 @@ public class Card {
     //Sets the suit of the card
     //First checks if the suit is the same as the current suit
     //Then sets old suit mult back to 1
-    private void setSuit(Suit s){
+    protected void setSuit(Suit s){
         if (this.suit != s) {
             //set old suit mult to 1
             switch (this.suit){
@@ -135,7 +135,7 @@ public class Card {
         }
     }
 
-    private void setMod(Mod m) {
+    protected void setMod(Mod m) {
         if (this.mod != m){
             switch (this.mod){
                 case UNDEAD:
@@ -161,7 +161,7 @@ public class Card {
         }
     }
 
-    private void setItem(Item i){
+    protected void setItem(Item i){
         if (this.item != i){
             switch(this.item){
                 case STONE:
@@ -189,45 +189,45 @@ public class Card {
         }
     }
 
-    private double getDefense(){
+    protected double getDefense(){
         return Math.round(this.defense);
     }
 
-    private double getDefenseMult(){
+    protected double getDefenseMult(){
         return  Math.round(this.defenseMult);
     }
 
-    private double getMeleeAtk(){
+    protected double getMeleeAtk(){
         return  Math.round(this.meleeAtk);
     }
 
-    private double getMeleeAtkMult(){
+    protected double getMeleeAtkMult(){
         return  Math.round(this.meleeAtkMult);
     }
 
-    private double getMagicAtk(){
+    protected double getMagicAtk(){
         return  Math.round(this.magicAtk);
     }
 
-    private double getMagicAtkMult(){
+    protected double getMagicAtkMult(){
         return  Math.round(this.magicAtkMult);
     }
 
-    private double getRangeAtk(){return  Math.round(this.rangeAtk);}
+    protected double getRangeAtk(){return  Math.round(this.rangeAtk);}
 
-    private double getRangeAtkMult(){
+    protected double getRangeAtkMult(){
         return  Math.round(this.rangeAtkMult);
     }
 
-    private double getDefenseTotal(){ return Math.round(this.getDefense() * this.getDefenseMult());}
+    protected double getDefenseTotal(){ return Math.round(this.getDefense() * this.getDefenseMult());}
 
-    private double getMeleeAtkTotal(){ return Math.round(this.getMeleeAtk() * this.getMeleeAtkMult());}
+    protected double getMeleeAtkTotal(){ return Math.round(this.getMeleeAtk() * this.getMeleeAtkMult());}
 
-    private double getMagicAtkTotal(){ return Math.round(this.getMagicAtk() * this.getMagicAtkMult());}
+    protected double getMagicAtkTotal(){ return Math.round(this.getMagicAtk() * this.getMagicAtkMult());}
 
-    private double getRangeAtkTotal(){ return Math.round(this.getRangeAtk() * this.getRangeAtkMult());}
+    protected double getRangeAtkTotal(){ return Math.round(this.getRangeAtk() * this.getRangeAtkMult());}
 
-    private double getHighestAtkTotal(){
+    protected double getHighestAtkTotal(){
         if (this.getMeleeAtkTotal() > this.getMagicAtkTotal() && this.getMeleeAtkTotal() > this.getRangeAtkTotal()){
             return this.getMeleeAtkTotal();
         }

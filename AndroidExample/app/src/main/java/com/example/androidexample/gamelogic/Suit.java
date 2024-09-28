@@ -2,5 +2,5 @@ package com.example.androidexample.gamelogic;
 
 public enum Suit {
 
-    SPADE, HEART, CLUB, DIAMOND
+    SPADE, HEART, CLUB, DIAMOND, NONE
 }
