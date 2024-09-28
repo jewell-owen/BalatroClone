@@ -13,10 +13,40 @@
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/play_play_hand_btn"
         app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
         app:layout_constraintEnd_toStartOf="@id/play_deck_linearlayout">
     </LinearLayout>
+
+    <Button
+        android:id="@+id/play_play_hand_btn"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/balatro"
+        android:text="@string/play_btn_text"
+        android:textSize="20sp"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="@id/play_hand_linearlayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </Button>
+
+    <Button
+        android:id="@+id/play_discard_btn"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="360dp"
+        android:fontFamily="@font/balatro"
+        android:text="@string/discard_btn_text"
+        android:textSize="20sp"
+        android:backgroundTint="@color/red"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/play_play_hand_btn"
+        app:layout_constraintEnd_toEndOf="@id/play_hand_linearlayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </Button>
 
     <LinearLayout
         android:id="@+id/play_jokers_linearlayout"

@@ -2,6 +2,7 @@
     <string name="app_name">BALATRO</string>
     <string name="main_title_text">MYTHOLOGY</string>
     <string name="play_btn_text">PLAY</string>
+    <string name="discard_btn_text">DISCARD</string>
     <string name="collection_btn_text">COLLECTION</string>
     <string name="options_btn_text">OPTIONS</string>
     <string name="quit_btn_text">QUIT</string>
