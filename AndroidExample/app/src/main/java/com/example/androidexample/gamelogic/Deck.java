@@ -39,7 +39,9 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-
+    protected void shuffle(){
+        Collections.shuffle(this.deck);
+    }
 
 
 
