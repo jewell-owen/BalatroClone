@@ -189,54 +189,38 @@ public class Card {
         }
     }
 
-    protected double getDefense(){
-        return Math.round(this.defense);
+
+    protected double getMeleeAtkTotal(double bonusMeleeAtk, double bonusMeleeAtkMult){
+        return Math.round((this.meleeAtk + bonusMeleeAtk) * (this.meleeAtkMult + bonusMeleeAtkMult));
     }
 
-    protected double getDefenseMult(){
-        return  Math.round(this.defenseMult);
+    protected double getMagicAtkTotal(double bonusMagicAtk, double bonusMagicAtkMult){
+        return Math.round((this.magicAtk + bonusMagicAtk) * (this.magicAtkMult * bonusMagicAtkMult));
     }
 
-    protected double getMeleeAtk(){
-        return  Math.round(this.meleeAtk);
+    protected double getRangeAtkTotal(double bonusRangeAtk, double bonusRangeAtkMult){
+        return Math.round((this.rangeAtk + bonusRangeAtk) * (this.rangeAtkMult + bonusRangeAtkMult));
     }
 
-    protected double getMeleeAtkMult(){
-        return  Math.round(this.meleeAtkMult);
+    protected double getDefenseTotalScore(double bonusDefense, double bonusDefenseMult){
+         return  Math.round((this.defense + bonusDefense) + (this.defenseMult * bonusDefenseMult));
     }
 
-    protected double getMagicAtk(){
-        return  Math.round(this.magicAtk);
-    }
+    protected double getHighestAttackTotalScore(double bonusMeleeAtk, double bonusMeleeAtkMult, double bonusMagicAtk, double bonusMagicAtkMult, double bonusRangeAtk, double bonusRangeAtkMult){
+        double meleeTotal = this.getMeleeAtkTotal(bonusMeleeAtk,bonusMeleeAtkMult);
+        double magicTotal = this.getMagicAtkTotal(bonusMagicAtk,bonusMagicAtkMult);
+        double rangeTotal = this.getRangeAtkTotal(bonusRangeAtk,bonusRangeAtkMult);
 
-    protected double getMagicAtkMult(){
-        return  Math.round(this.magicAtkMult);
-    }
-
-    protected double getRangeAtk(){return  Math.round(this.rangeAtk);}
-
-    protected double getRangeAtkMult(){
-        return  Math.round(this.rangeAtkMult);
-    }
-
-    protected double getDefenseTotal(){ return Math.round(this.getDefense() * this.getDefenseMult());}
-
-    protected double getMeleeAtkTotal(){ return Math.round(this.getMeleeAtk() * this.getMeleeAtkMult());}
-
-    protected double getMagicAtkTotal(){ return Math.round(this.getMagicAtk() * this.getMagicAtkMult());}
-
-    protected double getRangeAtkTotal(){ return Math.round(this.getRangeAtk() * this.getRangeAtkMult());}
-
-    protected double getHighestAtkTotal(){
-        if (this.getMeleeAtkTotal() > this.getMagicAtkTotal() && this.getMeleeAtkTotal() > this.getRangeAtkTotal()){
-            return this.getMeleeAtkTotal();
+        if (meleeTotal >= magicTotal && meleeTotal >= rangeTotal){
+            return meleeTotal;
         }
-        else if (this.getMagicAtkTotal() > this.getMeleeAtkTotal() && this.getMagicAtkTotal() > this.getRangeAtkTotal()){
-            return this.getMagicAtkTotal();
+        else if (magicTotal >= meleeTotal && magicTotal >= rangeTotal){
+            return magicTotal;
         }
         else{
-            return this.getRangeAtkTotal();
+            return rangeTotal;
         }
+
     }
 
 }

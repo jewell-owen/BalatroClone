@@ -43,6 +43,8 @@ public class Deck {
         Collections.shuffle(this.deck);
     }
 
-
+    protected Card getCard (int index){
+        return deck.get(index);
+    }
 
 }
