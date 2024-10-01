@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:padding="-10dp"
-        android:background="@drawable/king_diamonds">
+        android:background="@drawable/queen_hearts">
     </ImageButton>
 
 </androidx.cardview.widget.CardView>

@@ -8,53 +8,7 @@
     android:background="@drawable/balatroplay_background">
 
 
-    <HorizontalScrollView
-        android:id="@+id/play_hand_scrollview"
-        android:layout_width="450dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@id/play_play_hand_btn"
-        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
-        app:layout_constraintEnd_toStartOf="@id/play_deck_linearlayout">
 
-        <LinearLayout
-            android:id="@+id/play_hand_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-
-    <Button
-        android:id="@+id/play_play_hand_btn"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginStart="60dp"
-        android:fontFamily="@font/balatro"
-        android:text="@string/play_btn_text"
-        android:textSize="20sp"
-        android:backgroundTint="@color/blue"
-        app:cornerRadius="10dp"
-        app:layout_constraintStart_toStartOf="@id/play_hand_scrollview"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </Button>
-
-    <Button
-        android:id="@+id/play_discard_btn"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="360dp"
-        android:fontFamily="@font/balatro"
-        android:text="@string/discard_btn_text"
-        android:textSize="20sp"
-        android:backgroundTint="@color/red"
-        app:cornerRadius="10dp"
-        app:layout_constraintStart_toEndOf="@id/play_play_hand_btn"
-        app:layout_constraintEnd_toEndOf="@id/play_hand_scrollview"
-        app:layout_constraintBottom_toBottomOf="parent">
-    </Button>
 
     <LinearLayout
         android:id="@+id/play_jokers_linearlayout"
@@ -81,11 +35,20 @@
         android:id="@+id/play_shop_fragment_container_view"
         android:layout_width="150dp"
         android:layout_height="match_parent"
-        android:background="@color/black"
         android:name="com.example.androidexample.SidebarFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/play_main_area_fragment_container_view"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom"
+        android:name="com.example.androidexample.PlayAreaFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
+        app:layout_constraintEnd_toStartOf="@id/play_consumables_linearlayout"/>
 
     <LinearLayout
         android:id="@+id/play_deck_linearlayout"
