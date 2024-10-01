@@ -38,7 +38,7 @@ public class Card {
     }
 
     //returns an int for the card value
-    protected int getNumberValue(){
+    public int getNumberValue(){
         switch(this.value){
             case NONE:
                 return 0;
@@ -72,11 +72,11 @@ public class Card {
         return -1;
     }
 
-    protected Value getEnumValue(){
+    public Value getEnumValue(){
         return this.value;
     }
 
-    protected Suit getSuit(){
+    public Suit getSuit(){
         return this.suit;
     }
 
