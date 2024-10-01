@@ -231,7 +231,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                         return cardView;
                 }
         }
-        
+
         // Set values to the views in the CardView
         ImageButton btnCard = cardView.findViewById(R.id.card_button);
 
