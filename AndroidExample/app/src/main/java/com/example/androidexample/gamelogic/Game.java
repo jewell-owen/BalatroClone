@@ -15,6 +15,14 @@ public class Game {
     private double currentScore;
     private double requiredScoreOffense;
     private double requiredScoreDefense;
+    private double bonusMeleeAtk;
+    private double bonusMagicAtk;
+    private double bonusRangeAtk;
+    private double bonusDef;
+    private double bonusMeleeAtkMult;
+    private double bonusMagicAtkMult;
+    private double bonusRangeAtkMult;
+    private double bonusDefMult;
     private ArrayList<Card> hand = new ArrayList<Card>();
     private ArrayList<Double> baseAnteScoreOffense = new ArrayList<Double>();
     private ArrayList<Double> baseAnteScoreDefense = new ArrayList<Double>();
@@ -102,6 +110,70 @@ public class Game {
 
     private void discardIndex(int index){
         hand.remove(index);
+    }
+
+    public void addMeleeBonus(double amount){
+        this.bonusMeleeAtk += amount;
+    }
+
+    public void addMagicBonus(double amount){
+        this.bonusMagicAtk += amount;
+    }
+
+    public void addRangeBonus(double amount){
+        this.bonusRangeAtk += amount;
+    }
+
+    public void addDefenseBonus(double amount){
+        this.bonusDef += amount;
+    }
+
+    public void subtractMeleeBonus(double amount){
+        this.bonusMeleeAtk -= amount;
+    }
+
+    public void subtractMagicBonus(double amount){
+        this.bonusMagicAtk -= amount;
+    }
+
+    public void subtractRangeBonus(double amount){
+        this.bonusRangeAtk -= amount;
+    }
+
+    public void subtractDefenseBonus(double amount){
+        this.bonusDef -= amount;
+    }
+
+    public void addMeleeMultBonus(double amount){
+        this.bonusMeleeAtkMult += amount;
+    }
+
+    public void addMagicMultBonus(double amount){
+        this.bonusMagicAtkMult += amount;
+    }
+
+    public void addRangeMultBonus(double amount){
+        this.bonusRangeAtkMult += amount;
+    }
+
+    public void addDefenseMultBonus(double amount){
+        this.bonusRangeAtkMult += amount;
+    }
+
+    public void subtractMeleeMultBonus(double amount){
+        this.bonusMeleeAtkMult -= amount;
+    }
+
+    public void subtractMagicMultBonus(double amount){
+        this.bonusMagicAtkMult -= amount;
+    }
+
+    public void subtractRangeMultBonus(double amount){
+        this.bonusRangeAtkMult -= amount;
+    }
+
+    public void subtractDefenseMultBonus(double amount){
+        this.bonusDefMult -= amount;
     }
 
 

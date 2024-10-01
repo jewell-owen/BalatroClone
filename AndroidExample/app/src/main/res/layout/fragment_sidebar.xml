@@ -77,7 +77,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/blind_offense_required_icon" />
+            android:src="@drawable/blind_offense_required_temp" />
 
         <TextView
             android:id="@+id/sidebar_offense_score_required_tv"
