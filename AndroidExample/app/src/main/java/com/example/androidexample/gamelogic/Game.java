@@ -176,5 +176,9 @@ public class Game {
         this.bonusDefMult -= amount;
     }
 
+    public ArrayList<Card> getHand(){
+        return this.hand;
+    }
+
 
 }
