@@ -66,169 +66,166 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                 switch (v){
                     case ONE:
                         cardView = (CardView) inflater.inflate(R.layout.card_one_hearts, handLinearLayout, false);
-                        return cardView;
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case THREE:
                         cardView = (CardView) inflater.inflate(R.layout.card_three_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case FOUR:
                         cardView = (CardView) inflater.inflate(R.layout.card_four_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case FIVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_five_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case SIX:
                         cardView = (CardView) inflater.inflate(R.layout.card_six_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case SEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_seven_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case EIGHT:
                         cardView = (CardView) inflater.inflate(R.layout.card_eight_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case NINE:
                         cardView = (CardView) inflater.inflate(R.layout.card_nine_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case TEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_ten_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case ELEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_jack_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case TWELVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_queen_hearts, handLinearLayout, false);
-                        return cardView;
+
                     case THIRTEEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_king_hearts, handLinearLayout, false);
-                        return cardView;
+
                 }
             case SPADE:
                 switch (v){
                     case ONE:
                         cardView = (CardView) inflater.inflate(R.layout.card_one_spades, handLinearLayout, false);
-                        return cardView;
+
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_spades, handLinearLayout, false);
-                        return cardView;
+
                     case THREE:
                         cardView = (CardView) inflater.inflate(R.layout.card_three_spades, handLinearLayout, false);
-                        return cardView;
+
                     case FOUR:
                         cardView = (CardView) inflater.inflate(R.layout.card_four_spades, handLinearLayout, false);
-                        return cardView;
+
                     case FIVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_five_spades, handLinearLayout, false);
-                        return cardView;
+
                     case SIX:
                         cardView = (CardView) inflater.inflate(R.layout.card_six_spades, handLinearLayout, false);
-                        return cardView;
+
                     case SEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_seven_spades, handLinearLayout, false);
-                        return cardView;
+
                     case EIGHT:
                         cardView = (CardView) inflater.inflate(R.layout.card_eight_spades, handLinearLayout, false);
-                        return cardView;
+
                     case NINE:
                         cardView = (CardView) inflater.inflate(R.layout.card_nine_spades, handLinearLayout, false);
-                        return cardView;
+
                     case TEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_ten_spades, handLinearLayout, false);
-                        return cardView;
+
                     case ELEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_jack_spades, handLinearLayout, false);
-                        return cardView;
+
                     case TWELVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_queen_spades, handLinearLayout, false);
-                        return cardView;
+
                     case THIRTEEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_king_spades, handLinearLayout, false);
-                        return cardView;
+
                 }
             case CLUB:
                 switch (v){
                     case ONE:
                         cardView = (CardView) inflater.inflate(R.layout.card_one_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case THREE:
                         cardView = (CardView) inflater.inflate(R.layout.card_three_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case FOUR:
                         cardView = (CardView) inflater.inflate(R.layout.card_four_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case FIVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_five_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case SIX:
                         cardView = (CardView) inflater.inflate(R.layout.card_six_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case SEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_seven_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case EIGHT:
                         cardView = (CardView) inflater.inflate(R.layout.card_eight_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case NINE:
                         cardView = (CardView) inflater.inflate(R.layout.card_nine_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case TEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_ten_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case ELEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_jack_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case TWELVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_queen_clubs, handLinearLayout, false);
-                        return cardView;
+
                     case THIRTEEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_king_clubs, handLinearLayout, false);
-                        return cardView;
+
                 }
             case DIAMOND:
                 switch (v){
                     case ONE:
                         cardView = (CardView) inflater.inflate(R.layout.card_one_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case THREE:
                         cardView = (CardView) inflater.inflate(R.layout.card_three_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case FOUR:
                         cardView = (CardView) inflater.inflate(R.layout.card_four_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case FIVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_five_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case SIX:
                         cardView = (CardView) inflater.inflate(R.layout.card_six_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case SEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_seven_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case EIGHT:
                         cardView = (CardView) inflater.inflate(R.layout.card_eight_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case NINE:
                         cardView = (CardView) inflater.inflate(R.layout.card_nine_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case TEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_ten_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case ELEVEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_jack_diamonds, handLinearLayout, false);
-                        return cardView;
+
                     case TWELVE:
                         cardView = (CardView) inflater.inflate(R.layout.card_queen_diamonds, handLinearLayout, false);
-                        return cardView;
                     case THIRTEEN:
                         cardView = (CardView) inflater.inflate(R.layout.card_king_diamonds, handLinearLayout, false);
-                        return cardView;
                 }
         }
 
