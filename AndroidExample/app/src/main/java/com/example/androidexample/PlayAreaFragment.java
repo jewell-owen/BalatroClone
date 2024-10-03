@@ -65,7 +65,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             case HEART:
                 switch (v){
                     case ONE:
-                        cardView = (CardView) inflater.inflate(R.layout.card_one_hearts, handLinearLayout, false);
+                        cardView = (CardView) inflater.inflate(R.layout.card_ace_hearts, handLinearLayout, false);
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_hearts, handLinearLayout, false);
 
@@ -106,7 +106,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             case SPADE:
                 switch (v){
                     case ONE:
-                        cardView = (CardView) inflater.inflate(R.layout.card_one_spades, handLinearLayout, false);
+                        cardView = (CardView) inflater.inflate(R.layout.card_ace_spades, handLinearLayout, false);
 
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_spades, handLinearLayout, false);
@@ -148,7 +148,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             case CLUB:
                 switch (v){
                     case ONE:
-                        cardView = (CardView) inflater.inflate(R.layout.card_one_clubs, handLinearLayout, false);
+                        cardView = (CardView) inflater.inflate(R.layout.card_ace_clubs, handLinearLayout, false);
 
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_clubs, handLinearLayout, false);
@@ -190,7 +190,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             case DIAMOND:
                 switch (v){
                     case ONE:
-                        cardView = (CardView) inflater.inflate(R.layout.card_one_diamonds, handLinearLayout, false);
+                        cardView = (CardView) inflater.inflate(R.layout.card_ace_diamonds, handLinearLayout, false);
 
                     case TWO:
                         cardView = (CardView) inflater.inflate(R.layout.card_two_diamonds, handLinearLayout, false);
