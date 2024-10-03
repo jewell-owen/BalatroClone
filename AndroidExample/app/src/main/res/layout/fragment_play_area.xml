@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".PlayAreaFragment"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="664dp"
+    android:layout_height="310dp">
 
 
     <HorizontalScrollView
         android:id="@+id/play_played_cards_scrollview"
         android:layout_width="450dp"
         android:layout_height="100dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/play_hand_scrollview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/play_played_cards_linearlayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
         </LinearLayout>
@@ -28,34 +28,29 @@
         android:layout_width="450dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toTopOf="@id/play_play_hand_btn"
-        app:layout_constraintTop_toBottomOf="@id/play_played_cards_scrollview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/play_hand_linearlayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
         </LinearLayout>
     </HorizontalScrollView>
 
 
-
-
     <Button
         android:id="@+id/play_play_hand_btn"
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="60dp"
+        android:backgroundTint="@color/blue"
         android:fontFamily="@font/balatro"
         android:text="@string/play_btn_text"
         android:textSize="20sp"
-        android:backgroundTint="@color/blue"
         app:cornerRadius="10dp"
         app:layout_constraintStart_toStartOf="@id/play_hand_scrollview"
-        app:layout_constraintTop_toBottomOf="@id/play_hand_scrollview"
         app:layout_constraintBottom_toBottomOf="parent">
     </Button>
 
@@ -63,7 +58,6 @@
         android:id="@+id/play_discard_btn"
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:layout_marginTop="360dp"
         android:fontFamily="@font/balatro"
         android:text="@string/discard_btn_text"
         android:textSize="20sp"
@@ -71,6 +65,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintStart_toEndOf="@id/play_play_hand_btn"
         app:layout_constraintEnd_toEndOf="@id/play_hand_scrollview"
+        app:layout_constraintTop_toBottomOf="@id/play_hand_scrollview"
         app:layout_constraintBottom_toBottomOf="parent">
     </Button>
 

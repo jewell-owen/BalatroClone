@@ -1,5 +1,7 @@
 package com.example.androidexample.gamelogic;
 
+import com.example.androidexample.PlayAreaFragment;
+
 import java.util.ArrayList;
 
 public class Game {
@@ -12,6 +14,7 @@ public class Game {
     private int round;
     private int ante;
     private int numCardsDealt;
+    private PlayAreaFragment playFragment;
     private double currentScore;
     private double requiredScoreOffense;
     private double requiredScoreDefense;
@@ -24,16 +27,18 @@ public class Game {
     private double bonusRangeAtkMult;
     private double bonusDefMult;
     private ArrayList<Card> hand = new ArrayList<Card>();
+    private ArrayList<Card> selectedCards = new ArrayList<Card>();
     private ArrayList<Double> baseAnteScoreOffense = new ArrayList<Double>();
     private ArrayList<Double> baseAnteScoreDefense = new ArrayList<Double>();
 
-    public Game (){
+    public Game (PlayAreaFragment fragment){
         this.ante = 1;
         this.round = 1;
         this.money = 4;
         this.hands = 4;
         this.discards = 3;
         this.handSize = 8;
+        this.playFragment = fragment;
         this.deck = new Deck();
 
         //Offense scores for antes 0-12
@@ -81,6 +86,7 @@ public class Game {
 
     private void nextRound(){
         this.deck.shuffle();
+        numCardsDealt = 0;
         hand.clear();
         if (round == 1){
             requiredScoreOffense *= 1.5;
@@ -101,6 +107,7 @@ public class Game {
         for (int i = 0; i < numCards; i++){
             hand.add(deck.getCard(numCardsDealt));
             numCardsDealt++;
+            playFragment.updateHand(hand);
         }
     }
 
@@ -179,6 +186,56 @@ public class Game {
     public ArrayList<Card> getHand(){
         return this.hand;
     }
+
+    public String handToString(){
+        String str = "";
+        for (Card c : hand){
+            str += c.toString() + " ||| ";
+        }
+        return str;
+    }
+
+    public String deckToString(){
+        String str = "";
+        for (int i = 0; i < deck.getSize(); i++){
+            deck.getCard(i);
+            str += deck.getCard(i).toString() + " ||| ";
+        }
+        return str;
+    }
+
+    public void selectCard(Card c){
+        selectedCards.add(c);
+    }
+
+    public void deselectCard(Card c){
+        selectedCards.remove(c);
+    }
+
+    public ArrayList<Card> getSelectedCards(){
+        return selectedCards;
+    }
+
+    public void clearSelectedCards(){
+        selectedCards.clear();
+    }
+
+    public void discardSelectedCards(){
+        int numDiscard = selectedCards.size();
+        for (Card c : selectedCards){
+            hand.remove(c);
+            discardCard(c);
+        }
+        clearSelectedCards();
+        discards -= 1;
+        deal(numDiscard);
+    }
+
+    public void playSelectedCards(){
+
+    }
+
+
 
 
 }

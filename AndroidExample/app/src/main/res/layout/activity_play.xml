@@ -42,8 +42,8 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/play_main_area_fragment_container_view"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
+        android:layout_width="664dp"
+        android:layout_height="310dp"
         android:layout_gravity="bottom"
         android:name="com.example.androidexample.PlayAreaFragment"
         app:layout_constraintBottom_toBottomOf="parent"
