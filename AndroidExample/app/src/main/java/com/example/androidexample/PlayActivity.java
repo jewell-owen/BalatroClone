@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class PlayActivity extends AppCompatActivity{
 
+    private Game game;
 
 
 
@@ -29,11 +30,16 @@ public class PlayActivity extends AppCompatActivity{
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
+
     }
 
 
+    public void setGame(Game game){
+        this.game = game;
+    }
 
 
-
-
+    public Game getGame() {
+        return game;
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.androidexample.gamelogic;
 
 import com.example.androidexample.PlayAreaFragment;
+import com.example.androidexample.SidebarFragment;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class Game {
     private int ante;
     private int numCardsDealt;
     private PlayAreaFragment playFragment;
+    private SidebarFragment sideBarFragment;
     private double currentScore;
     private double requiredScoreOffense;
     private double requiredScoreDefense;
@@ -221,21 +223,25 @@ public class Game {
     }
 
     public void discardSelectedCards(){
-        int numDiscard = selectedCards.size();
-        for (Card c : selectedCards){
-            hand.remove(c);
-            discardCard(c);
+        if (discards >= 1){
+            int numDiscard = selectedCards.size();
+            for (Card c : selectedCards){
+                hand.remove(c);
+                discardCard(c);
+            }
+            clearSelectedCards();
+            discards -= 1;
+            deal(numDiscard);
         }
-        clearSelectedCards();
-        discards -= 1;
-        deal(numDiscard);
+
     }
 
     public void playSelectedCards(){
 
     }
 
-
-
+    public void setSideBarFragment(SidebarFragment fragment){
+        this.sideBarFragment = fragment;
+    }
 
 }

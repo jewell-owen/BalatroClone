@@ -41,9 +41,10 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
         });
 
         game = new Game(this);
+        ((PlayActivity)getActivity()).setGame(game);
         createCards(game.getHand());
-        Log.d("PlayAreaFragment", "Hand : " + game.handToString());
-        Log.d("PlayAreaFragment", "Deck : " + game.deckToString());
+        //Log.d("PlayAreaFragment", "Hand : " + game.handToString());
+        //Log.d("PlayAreaFragment", "Deck : " + game.deckToString());
 
         return view;
     }
@@ -51,15 +52,6 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         int id = view.getId();
-//        if (id == R.id.play_discard_btn) {
-//            Log.d("PlayAreaFragment", "Discard button clicked");
-//            game.discardSelectedCards();
-//        }
-//        else if (id == R.id.play_play_hand_btn){
-//            game.playSelectedCards();
-//        }
-
-
     }
 
     public void updateHand(ArrayList<Card> hand){
@@ -267,7 +259,14 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 Log.d("PlayAreaFragment", "Card clicked: " + value.toString() + suit.toString());
                 //HANDLE CARD SELECTION
-                game.selectCard(card);
+                if (game.getSelectedCards().contains(card)){
+                    game.deselectCard(card);
+                }
+                else{
+                    game.selectCard(card);
+                }
+
+
             }
         });
 

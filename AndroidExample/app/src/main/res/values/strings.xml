@@ -5,4 +5,5 @@
     <string name="collection_btn_text">COLLECTION</string>
     <string name="options_btn_text">OPTIONS</string>
     <string name="quit_btn_text">QUIT</string>
+    <string name="hand_type_text">Hand Type</string>
 </resources>
