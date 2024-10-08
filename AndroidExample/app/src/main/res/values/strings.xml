@@ -6,4 +6,6 @@
     <string name="options_btn_text">OPTIONS</string>
     <string name="quit_btn_text">QUIT</string>
     <string name="hand_type_text">Hand Type</string>
+    <string name="rank_btn_text">Rank</string>
+    <string name="suit_btn_text">Suit</string>
 </resources>

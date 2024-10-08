@@ -23,7 +23,7 @@ public class Card {
         this.mod = m;
         this.item = i;
 
-        this.defense = this.getNumberValue();
+        this.defense = this.getNumericValue();
 
         switch (this.suit){
             case HEART:
@@ -38,7 +38,7 @@ public class Card {
     }
 
     //returns an int for the card value
-    public int getNumberValue(){
+    public int getNumericValue(){
         switch(this.value){
             case NONE:
                 return 0;
@@ -95,8 +95,8 @@ public class Card {
 
     protected void setEnumValue(Value v){
         this.value = v;
-        if (this.defense < this.getNumberValue()){
-            this.defense = this.getNumberValue();
+        if (this.defense < this.getNumericValue()){
+            this.defense = this.getNumericValue();
         }
     }
 

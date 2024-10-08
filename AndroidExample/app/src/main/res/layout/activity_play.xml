@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         android:background="@color/black"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
+        app:layout_constraintStart_toEndOf="@id/play_sidebar_fragment_container_view"
         app:layout_constraintEnd_toStartOf="@id/play_consumables_linearlayout">
     </LinearLayout>
 
@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/play_shop_fragment_container_view"
+        android:id="@+id/play_sidebar_fragment_container_view"
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:name="com.example.androidexample.SidebarFragment"
@@ -47,7 +47,7 @@
         android:layout_gravity="bottom"
         android:name="com.example.androidexample.PlayAreaFragment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/play_shop_fragment_container_view"
+        app:layout_constraintStart_toEndOf="@id/play_sidebar_fragment_container_view"
         app:layout_constraintEnd_toStartOf="@id/play_consumables_linearlayout"/>
 
     <LinearLayout

@@ -201,6 +201,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/sidebar_remaining_discards_tv"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:gravity="center"

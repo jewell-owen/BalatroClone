@@ -24,6 +24,8 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
     private Game game;
     private LinearLayout handLinearLayout;
     private Button discardButton;
+    private Button sortRankButton;
+    private Button sortSuitButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +33,14 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
 
         handLinearLayout = view.findViewById(R.id.play_hand_linearlayout);
         discardButton = view.findViewById(R.id.play_discard_btn);
+        sortRankButton = view.findViewById(R.id.play_sort_rank_btn);
+        sortSuitButton = view.findViewById(R.id.play_sort_suit_btn);
+
+        this.game = ((PlayActivity)getActivity()).getGame();
+        game.startRoundDeal();
+        createCards(game.getHand());
+        //Log.d("PlayAreaFragment", "Hand : " + game.handToString());
+        //Log.d("PlayAreaFragment", "Deck : " + game.deckToString());
 
         discardButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,11 +50,22 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        game = new Game(this);
-        ((PlayActivity)getActivity()).setGame(game);
-        createCards(game.getHand());
-        //Log.d("PlayAreaFragment", "Hand : " + game.handToString());
-        //Log.d("PlayAreaFragment", "Deck : " + game.deckToString());
+        sortRankButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("PlayAreaFragment", "Sort rank button clicked");
+                game.sortHandByRank();
+
+            }
+        });
+
+        sortSuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("PlayAreaFragment", "Sort suit button clicked");
+                game.sortHandBySuit();
+            }
+        });
 
         return view;
     }
@@ -271,5 +292,9 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
         });
 
         return cardView;
+    }
+
+    public void setGame(Game game){
+        this.game = game;
     }
 }

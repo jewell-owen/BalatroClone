@@ -9,14 +9,17 @@ public class Game {
 
     private Deck deck;
     private int money;
-    private int hands;
-    private int discards;
-    private int handSize;
+    private int currHands;
+    private int totalHands;
+    private int currDiscards;
+    private int totalDiscards;
+    private int currHandSize;
+    private int totalHandSize;
     private int round;
     private int ante;
     private int numCardsDealt;
     private PlayAreaFragment playFragment;
-    private SidebarFragment sideBarFragment;
+    private SidebarFragment sidebarFragment;
     private double currentScore;
     private double requiredScoreOffense;
     private double requiredScoreDefense;
@@ -33,14 +36,15 @@ public class Game {
     private ArrayList<Double> baseAnteScoreOffense = new ArrayList<Double>();
     private ArrayList<Double> baseAnteScoreDefense = new ArrayList<Double>();
 
-    public Game (PlayAreaFragment fragment){
+    public Game (PlayAreaFragment pFragment, SidebarFragment sFragment){
         this.ante = 1;
         this.round = 1;
         this.money = 4;
-        this.hands = 4;
-        this.discards = 3;
-        this.handSize = 8;
-        this.playFragment = fragment;
+        this.currHands = 4;
+        this.currDiscards = 3;
+        this.currHandSize = 8;
+        this.playFragment = pFragment;
+        this.sidebarFragment = sFragment;
         this.deck = new Deck();
 
         //Offense scores for antes 0-12
@@ -74,7 +78,6 @@ public class Game {
         this.baseAnteScoreDefense.add(65.0);
 
         numCardsDealt = 0;
-        deal(handSize);
 
     }
 
@@ -90,6 +93,8 @@ public class Game {
         this.deck.shuffle();
         numCardsDealt = 0;
         hand.clear();
+        currDiscards = totalDiscards;
+        currHands = totalHands;
         if (round == 1){
             requiredScoreOffense *= 1.5;
             round ++;
@@ -223,14 +228,15 @@ public class Game {
     }
 
     public void discardSelectedCards(){
-        if (discards >= 1){
+        if (!selectedCards.isEmpty() && currDiscards >= 1){
             int numDiscard = selectedCards.size();
             for (Card c : selectedCards){
                 hand.remove(c);
                 discardCard(c);
             }
             clearSelectedCards();
-            discards -= 1;
+            currDiscards -= 1;
+            sidebarFragment.updateDiscards(currDiscards);
             deal(numDiscard);
         }
 
@@ -240,8 +246,18 @@ public class Game {
 
     }
 
-    public void setSideBarFragment(SidebarFragment fragment){
-        this.sideBarFragment = fragment;
+    public void sortHandByRank(){
+        hand.sort(new CardRankComparator());
+        playFragment.updateHand(hand);
+    }
+
+    public void sortHandBySuit(){
+        hand.sort(new CardSuitComparator());
+        playFragment.updateHand(hand);
+    }
+
+    public void startRoundDeal(){
+        deal(currHandSize);
     }
 
 }
