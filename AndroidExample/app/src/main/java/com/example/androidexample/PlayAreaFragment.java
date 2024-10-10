@@ -273,7 +273,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                 break;
         }
 
-//        cardView.setBackgroundResource(0);
+        cardView.setBackgroundResource(0);
 
         // Set values to the views in the CardView
         ImageButton btnCard = cardView.findViewById(R.id.card_button);
@@ -285,12 +285,12 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                 //HANDLE CARD SELECTION
                 if (game.getSelectedCards().contains(card)){
                     game.deselectCard(card);
-//                    cardView.setBackgroundResource(0);
+                    cardView.setBackgroundResource(0);
                 }
                 else{
                     if (game.getSelectedCards().size() < 5){
                         game.selectCard(card);
-//                        cardView.setBackgroundResource(R.drawable.select_overlay);
+                        cardView.setBackgroundResource(R.drawable.select_overlay);
 
                     }
                 }
