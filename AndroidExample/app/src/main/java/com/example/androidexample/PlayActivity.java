@@ -36,7 +36,7 @@ public class PlayActivity extends AppCompatActivity{
         this.sidebarFragment = (SidebarFragment) getSupportFragmentManager().getFragments().get(0);
         this.playAreaFragment = (PlayAreaFragment) getSupportFragmentManager().getFragments().get(1);
 
-        game = new Game(playAreaFragment, sidebarFragment);
+        game = new Game(playAreaFragment, sidebarFragment, 4, 3, 4);
     }
 
     public Game getGame() {
