@@ -26,6 +26,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
     private Button discardButton;
     private Button sortRankButton;
     private Button sortSuitButton;
+    private CardView cardView = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,7 +95,7 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
     private CardView createCardView(Card card)  {
         // Inflate the CardView layout
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        CardView cardView = null;
+        cardView = null;
         Suit suit = card.getSuit();
         Value value = card.getEnumValue();
         switch (suit){
@@ -272,6 +273,8 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                 break;
         }
 
+//        cardView.setBackgroundResource(0);
+
         // Set values to the views in the CardView
         ImageButton btnCard = cardView.findViewById(R.id.card_button);
 
@@ -282,12 +285,15 @@ public class PlayAreaFragment extends Fragment implements View.OnClickListener {
                 //HANDLE CARD SELECTION
                 if (game.getSelectedCards().contains(card)){
                     game.deselectCard(card);
+//                    cardView.setBackgroundResource(0);
                 }
                 else{
-                    game.selectCard(card);
+                    if (game.getSelectedCards().size() < 5){
+                        game.selectCard(card);
+//                        cardView.setBackgroundResource(R.drawable.select_overlay);
+
+                    }
                 }
-
-
             }
         });
 

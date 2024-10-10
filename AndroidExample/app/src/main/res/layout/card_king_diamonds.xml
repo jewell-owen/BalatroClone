@@ -15,5 +15,4 @@
         android:padding="-10dp"
         android:background="@drawable/king_diamonds">
     </ImageButton>
-
 </androidx.cardview.widget.CardView>

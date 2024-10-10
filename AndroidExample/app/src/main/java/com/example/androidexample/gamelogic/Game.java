@@ -80,6 +80,11 @@ public class Game {
         numCardsDealt = 0;
     }
 
+    // Start of methods to goto next round or ante ================================================
+    /**
+     * Method to goto next ante
+     * Reset round to 1 and set base scores for offense and defense
+     */
     private void nextAnte(){
         this.ante ++;
         this.round = 1;
@@ -88,8 +93,14 @@ public class Game {
 
     }
 
+    /**
+     * Method to goto next round
+     * Shuffle deck, reset num cards dealt, clear hand, earn interest, earn end round money
+     * Reset discards and hands
+     * Set required score for offense and defense
+     * If third round go to next ante
+     */
     private void nextRound(){
-        //Shuffle the deck, reset num cards dealt,earn interest, earn round money, reset hand, reset discards
         this.deck.shuffle();
         numCardsDealt = 0;
         hand.clear();
@@ -110,6 +121,7 @@ public class Game {
             this.nextAnte();
         }
     }
+    // End of methods to goto next round or ante ==================================================
 
     // Start of methods to deal cards =============================================================
     /**
@@ -135,80 +147,6 @@ public class Game {
         deal(currHandSize);
     }
     // End of methods to deal cards ===============================================================
-
-    // Start of methods to add/subtract local bonuses for jokers ==================================
-    public void addMeleeBonus(double amount){
-        this.bonusMeleeAtk += amount;
-    }
-
-    public void addMagicBonus(double amount){
-        this.bonusMagicAtk += amount;
-    }
-
-    public void addRangeBonus(double amount){
-        this.bonusRangeAtk += amount;
-    }
-
-    public void addDefenseBonus(double amount){
-        this.bonusDef += amount;
-    }
-
-    public void subtractMeleeBonus(double amount){
-        this.bonusMeleeAtk -= amount;
-    }
-
-    public void subtractMagicBonus(double amount){
-        this.bonusMagicAtk -= amount;
-    }
-
-    public void subtractRangeBonus(double amount){
-        this.bonusRangeAtk -= amount;
-    }
-
-    public void subtractDefenseBonus(double amount){
-        this.bonusDef -= amount;
-    }
-
-    public void addMeleeMultBonus(double amount){
-        this.bonusMeleeAtkMult += amount;
-    }
-
-    public void addMagicMultBonus(double amount){
-        this.bonusMagicAtkMult += amount;
-    }
-
-    public void addRangeMultBonus(double amount){
-        this.bonusRangeAtkMult += amount;
-    }
-
-    public void addDefenseMultBonus(double amount){
-        this.bonusRangeAtkMult += amount;
-    }
-
-    public void subtractMeleeMultBonus(double amount){
-        this.bonusMeleeAtkMult -= amount;
-    }
-
-    public void subtractMagicMultBonus(double amount){
-        this.bonusMagicAtkMult -= amount;
-    }
-
-    public void subtractRangeMultBonus(double amount){
-        this.bonusRangeAtkMult -= amount;
-    }
-
-    public void subtractDefenseMultBonus(double amount){
-        this.bonusDefMult -= amount;
-    }
-    // End of methods to add/subtract local bonuses for jokers ====================================
-
-    /**
-     * Getter for the hand
-     * @return ArrayList of cards in hand
-     */
-    public ArrayList<Card> getHand(){
-        return this.hand;
-    }
 
     // Start of methods to convert objects to strings for debugging cards =========================
     /**
@@ -370,4 +308,78 @@ public class Game {
         }
     }
     // End of methods to handle earning money =====================================================
+
+    /**
+     * Getter for the hand
+     * @return ArrayList of cards in hand
+     */
+    public ArrayList<Card> getHand(){
+        return this.hand;
+    }
+
+    // Start of methods to add/subtract local bonuses for jokers ==================================
+    public void addMeleeBonus(double amount){
+        this.bonusMeleeAtk += amount;
+    }
+
+    public void addMagicBonus(double amount){
+        this.bonusMagicAtk += amount;
+    }
+
+    public void addRangeBonus(double amount){
+        this.bonusRangeAtk += amount;
+    }
+
+    public void addDefenseBonus(double amount){
+        this.bonusDef += amount;
+    }
+
+    public void subtractMeleeBonus(double amount){
+        this.bonusMeleeAtk -= amount;
+    }
+
+    public void subtractMagicBonus(double amount){
+        this.bonusMagicAtk -= amount;
+    }
+
+    public void subtractRangeBonus(double amount){
+        this.bonusRangeAtk -= amount;
+    }
+
+    public void subtractDefenseBonus(double amount){
+        this.bonusDef -= amount;
+    }
+
+    public void addMeleeMultBonus(double amount){
+        this.bonusMeleeAtkMult += amount;
+    }
+
+    public void addMagicMultBonus(double amount){
+        this.bonusMagicAtkMult += amount;
+    }
+
+    public void addRangeMultBonus(double amount){
+        this.bonusRangeAtkMult += amount;
+    }
+
+    public void addDefenseMultBonus(double amount){
+        this.bonusRangeAtkMult += amount;
+    }
+
+    public void subtractMeleeMultBonus(double amount){
+        this.bonusMeleeAtkMult -= amount;
+    }
+
+    public void subtractMagicMultBonus(double amount){
+        this.bonusMagicAtkMult -= amount;
+    }
+
+    public void subtractRangeMultBonus(double amount){
+        this.bonusRangeAtkMult -= amount;
+    }
+
+    public void subtractDefenseMultBonus(double amount){
+        this.bonusDefMult -= amount;
+    }
+    // End of methods to add/subtract local bonuses for jokers ====================================
 }
